@@ -1,0 +1,51 @@
+1.博物馆文物知识问答系统
+
+一个基于 RAG（检索增强生成）的博物馆文物知识问答应用，用户提问后，系统从本地整理的文物资料中检索相关内容，并调用 DeepSeek 大模型生成可靠回答，避免编造。
+
+2.功能及其特点
+
+- 基于 RAG 架构，回答有据可查
+- 使用 Streamlit 构建交互界面，支持多轮对话
+- 结合文博专业知识，资料库由作者整理
+- 可部署到 Streamlit Community Cloud
+
+3.技术栈
+
+- Python
+- Streamlit
+- LangChain
+- Chroma 向量数据库
+- DeepSeek API
+- HuggingFace Embeddings（中文向量模型）
+
+在线演示
+https://qing-shui615-museum-museum-qanda-sljhhr.streamlit.app/
+
+ 本地运行
+1. 克隆仓库
+   ```bash
+   git clone https://github.com/QING-SHUI615/museum.git
+   cd museum
+
+2.安装
+bash
+pip install -r requirements.txt
+设置环境变量 DEEPSEEK_API_KEY
+
+3.准备资料库（若已生成可跳过）
+bash
+python create_vectordb.py
+
+4.运行应用
+bash
+streamlit run museum-QandA.py
+
+项目说明
+artifacts.txt：整理的文物资料
+create_vectordb.py：生成向量数据库
+museum-QandA.py：主应用（Streamlit + RAG）
+
+作者
+贵州民族大学 文物与博物馆学专业 
+自学 Python 与 AI 应用开发，致力于 AI+文博方向
+
