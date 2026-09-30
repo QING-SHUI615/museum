@@ -53,5 +53,6 @@ streamlit run museum-QandA.py
 artifacts.txt：整理的文物资料
 create_vectordb.py：生成向量数据库
 museum-QandA.py：主应用（Streamlit + RAG）
+museum-fastapi.py:FastAPI 后端服务，提供 `/ask` 接口
 
 
