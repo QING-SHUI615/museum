@@ -6,17 +6,26 @@
 
 - 基于 RAG 架构，回答有据可查
 - 使用 Streamlit 构建交互界面，支持多轮对话
-- 结合文博专业知识，资料库由作者整理
+- 前后端分离：提供FastAPI版本API接口，支持独立部署
 - 可部署到 Streamlit Community Cloud
 
 3.技术栈
 
-- Python
-- Streamlit
-- LangChain
-- Chroma 向量数据库
-- DeepSeek API
-- HuggingFace Embeddings（中文向量模型）
+| 语言 | Python |
+| 前端 | Streamlit |
+| 后端 | FastAPI |
+| 大模型 | DeepSeek API (deepseek-chat) |
+| 框架 | LangChain |
+| 向量数据库 | Chroma |
+| Embedding | HuggingFacetext2vec-base-chinese |
+
+4.两个版本
+
+- Streamlit 版本：适合快速演示，部署在 Streamlit Cloud，可直接在线体验。
+- FastAPI 版本：适合工程化部署，提供 REST API，可被其他系统调用。启动方式：
+  ```bash
+  uvicorn api:app --reload
+访问 http://127.0.0.1:8000/docs 可测试接口。
 
 在线演示
 https://qing-shui615-museum-museum-qanda-sljhhr.streamlit.app/
@@ -45,7 +54,4 @@ artifacts.txt：整理的文物资料
 create_vectordb.py：生成向量数据库
 museum-QandA.py：主应用（Streamlit + RAG）
 
-作者
-贵州民族大学 文物与博物馆学专业 
-自学 Python 与 AI 应用开发，致力于 AI+文博方向
 
